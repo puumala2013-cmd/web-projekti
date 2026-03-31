@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>While-valikko</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <h1>While-pohjainen tehtävä</h1>
+
+    <div class="menu">
+        <button onclick="window.location='index.html'">⬅ Takaisin päävalikkoon</button>
+    </div>
 
 <script>
 let kaynnissa = true;
@@ -21,10 +28,18 @@ while (kaynnissa) {
 
         let vastaus = prompt("Kirjoita funktio greet(name), joka tulostaa 'Hei, nimi'");
 
-        // Oikea vastaus:
-        let oikea = 'function greet(name) {\n  console.log("Hei, " + name);\n}';
+        let oikea1 = `function greet(name) {
+  console.log("Hei, " + name);
+}`;
+        let oikea2 = `function greet(name) {
+  console.log('Hei, ' + name);
+}`;
 
-        if (vastaus.trim() === oikea.trim()) {
+        let siivottu = vastaus.replace(/\s+/g, "");
+        let siivottu1 = oikea1.replace(/\s+/g, "");
+        let siivottu2 = oikea2.replace(/\s+/g, "");
+
+        if (siivottu === siivottu1 || siivottu === siivottu2) {
             alert("Oikein!");
         } else {
             alert("Väärin!");
