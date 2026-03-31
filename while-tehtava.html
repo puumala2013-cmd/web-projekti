@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>While-valikko</title>
+</head>
+<body>
+
+<script>
+let kaynnissa = true;
+
+while (kaynnissa) {
+
+    let valinta = prompt(
+        "Valikko:\n" +
+        "1 = Ratkaise tehtävä\n" +
+        "2 = Poistu"
+    );
+
+    if (valinta === "1") {
+
+        let vastaus = prompt("Kirjoita funktio greet(name), joka tulostaa 'Hei, nimi'");
+
+        // Oikea vastaus:
+        let oikea = 'function greet(name) {\n  console.log("Hei, " + name);\n}';
+
+        if (vastaus.trim() === oikea.trim()) {
+            alert("Oikein!");
+        } else {
+            alert("Väärin!");
+        }
+
+    } else if (valinta === "2") {
+        kaynnissa = false;
+        alert("Ohjelma suljetaan.");
+    } else {
+        alert("Virheellinen valinta.");
+    }
+}
+</script>
+
+</body>
+</html>
